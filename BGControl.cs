@@ -30,17 +30,17 @@ namespace StorybrewScripts
 
             //---Starting BG--- [PART1 - MENTAI]
             Black.Fade(0,15564,1,1); //black start
-            Black.Scale(0, 480.0/1200);
+            Black.Scale(0, 480.0/988);
 
             Flash(15447); 
             
             Background_Dark.Fade(15565,15566,0,1);         //fade in
             Background_Dark.Fade(15566,30330,1,1);         //maintain
             Background_Dark.Fade(30330,30331,0,0);         //reset
-            Background_Dark.Scale(15565, 480.0/1200);      //size
+            Background_Dark.Scale(15565, 480.0/988);      //size
             
             Background_Normal.Fade(30447,60330,1,1);    //maintain
-            Background_Normal.Scale(30447, 480.0/1200); //size  
+            Background_Normal.Scale(30447, 480.0/988); //size  
 
             //Starting BG dim into CursorFollow
             Dim.Fade(28690,30330,0,1); //dim
@@ -49,7 +49,7 @@ namespace StorybrewScripts
 
             //---Cursor Follow--- [PART2 - AKITOSHI]
             Vig.Fade(30447,60330,1,1);
-            Vig.Scale(30447, 480.0/1200);
+            Vig.Scale(30447, 480.0/1080);
             //30447 to 60330 is CursorFollow
             CursorFollow(30448,60213, 16,0,0,0.8,1.2,true,Color4.White);
 
@@ -61,7 +61,7 @@ namespace StorybrewScripts
 
             //---After Pulse--- [PART4 - AKITOSHI]
             Background_Normal.Fade(90447,93143,1,0);    //fade out
-            Background_Bright.Scale(90330, 480.0/1200); //size
+            Background_Bright.Scale(90330, 480.0/988); //size
             Background_Dark.Fade(60330,120447,1,1);     //maintain dark in bg
 
             //Background_Normal.Fade(105447,120447,0,1);  //fade back normal
@@ -105,7 +105,7 @@ namespace StorybrewScripts
             //---After Kiai One--- [PART6 AKITOSHI] 
             Dim.Fade(157831,163806,0,0); 
             Background_Desat.Fade(154197,157830,0,1); //Fade in
-            Background_Desat.Scale(154192,480.0/1200);
+            Background_Desat.Scale(154192,480.0/988);
             Background_Desat.Fade(157830,160174,1,0); //Fade out
             Background_Desat.Fade(160175,160176,0,0); //reset
             Background_Dark.Fade(157829,157829,0,0); //Reset 
@@ -135,7 +135,7 @@ namespace StorybrewScripts
             Twinkle(204247,205985); //Pulse Twinkle
             Background_DesatLow.Fade(0,207613,0,0);
             Background_DesatLow.Fade(207613,239047,1,1); //maintain
-            Background_DesatLow.Scale(90330, 480.0/1200); //size
+            Background_DesatLow.Scale(90330, 480.0/988); //size
             PulseSingleOnDark(223387);
             PulseSingleOnDark(230350);
             Background_Dark.Fade(235572,235680,0,1);
@@ -167,7 +167,7 @@ namespace StorybrewScripts
             Pulse(300318,304456);
             Flash(331470);
 
-            CursorFollow(221647,235137,16,300,300,0.5,1.2,true,Color4.White);
+            CursorFollow(221647,235137,16,300,300,0.5,1.2,true,Color4.White); //
 
 
             
@@ -190,7 +190,7 @@ namespace StorybrewScripts
 
             for(double i = Start; i < End; i += beat)
             {
-                Background.Scale(OsbEasing.OutQuad, i, i + beat, 480.0 / 1185, 480.0 / 1200);
+                Background.Scale(OsbEasing.OutQuad, i, i + beat, 480.0 / 973, 480.0 / 988);
                 //Background_Back.Scale(OsbEasing.OutQuad, i, i + beat, 480.0 / 1180, 480.0 / 1200);
                 Background.Fade(i, i + beat, 0.2, 0);
             }
@@ -198,27 +198,27 @@ namespace StorybrewScripts
         void PulseSingleBright(int now){
             var beat = Beatmap.GetTimingPointAt(now).BeatDuration;
             var Background = GetLayer("Background").CreateSprite("sb/bgs/bg_bright.jpg");
-            Background.Scale(OsbEasing.OutQuad, now, now + beat, 480.0 / 1185, 480.0 / 1200);
+            Background.Scale(OsbEasing.OutQuad, now, now + beat, 480.0 / 973, 480.0 / 988);
         }
 
         void PulseSingleOnNormal(int Start){
             var Background = GetLayer("Background_Top").CreateSprite("sb/bgs/bg_bright.jpg");
             var beat = Beatmap.GetTimingPointAt(Start).BeatDuration;
-            Background.Scale(OsbEasing.OutQuad, Start, Start + beat, 480.0 / 1185, 480.0 / 1200);
+            Background.Scale(OsbEasing.OutQuad, Start, Start + beat, 480.0 / 973, 480.0 / 988);
             Background.Fade(Start, Start + 700, 1,0);
         }
 
         void PulseSingleOnDark(int Start){
             var Background = GetLayer("Background_Dark").CreateSprite("sb/bgs/bg_normal.jpg");
             var beat = Beatmap.GetTimingPointAt(Start).BeatDuration;
-            Background.Scale(OsbEasing.OutQuad, Start, Start + beat, 480.0 / 1185, 480.0 / 1200);
+            Background.Scale(OsbEasing.OutQuad, Start, Start + beat, 480.0 / 973, 480.0 / 988);
             Background.Fade(Start, Start + 700, 1,0);
         }
 
         void PulseSingleOnDarkKiai(int Start){
             var Background = GetLayer("Background_Dark").CreateSprite("sb/bgs/bg_normal.jpg");
             var beat = Beatmap.GetTimingPointAt(Start).BeatDuration;
-            Background.Scale(OsbEasing.OutQuad, Start, Start + beat, 480.0 / 1185, 480.0 / 1200);
+            Background.Scale(OsbEasing.OutQuad, Start, Start + beat, 480.0 / 973, 480.0 / 988);
             Background.Fade(Start, Start + 700, 1,0);
         }
 
